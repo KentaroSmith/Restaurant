@@ -1,0 +1,23 @@
+{
+  "name": "restaurant",
+  "version": "1.0.0",
+  "description": "**CLIENT SIDE**\r three HTML files\r ##Paul\r HTML/CSS\r - index (/)\r - add reservations (/reserve)\r - view tables (/table)\r ## Dan\r JS\r - submit reservation form \r     - POST\r - view tables\r     - GET",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KentaroSmith/Restaurant.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KentaroSmith/Restaurant/issues"
+  },
+  "homepage": "https://github.com/KentaroSmith/Restaurant#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

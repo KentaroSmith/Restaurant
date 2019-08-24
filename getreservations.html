@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reservation Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel=“stylesheet” href=“https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css“> <script
+        src="https://code.jquery.com/jquery.js">
+        </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center">
+            <span class="glyphicon glyphicon-fire">
+
+            </span>
+            Hot Restaurant
+        </h1>
+        <hr>
+        <h2 class="text-center">Make your reservation</h2>
+        <br>
+        <div class="text-center">
+            <a href="/reserve">
+                <button type="button" class="btn btn-lg btn-primary glyphicon glyphicon-list-alt">
+
+                    Make a reservation
+                </button> </a>
+            <a href="/">
+                <button type="button" class="btn btn-lg btn-default">
+                    <span class="glyphicon glyphicon-home">
+
+                    </span>
+                    Home
+                </button>
+            </a>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>Set Reservations</h1>
+                <ul class="list-group" id="table">
+                    <li class="list-group-item" id="res1">Open Table</li>
+                    <li class="list-group-item" id="res2">Open Table</li>
+                    <li class="list-group-item" id="res3">Open Table</li>
+                    <li class="list-group-item" id="res4">Open Table</li>
+                    <li class="list-group-item" id="res5">Open Table</li>
+                </ul>
+                <h1>WaitingList</h1>
+                <ul class="list-group" id="table2">
+
+                </ul>
+
+            </div>
+
+
+        </div>
+
+        <footer class="footer">
+
+            <div class="container">
+                <p>
+                    <a href="/api/newtables"> API Table Link</a>
+                    " | "
+                    <a href="/api/gettables">API Wait List</a>
+                </p>
+            </div>
+
+
+        </footer>
+
+    </div>
+    <script type="text/javascript">
+        $.get("/api/gettables", function (data) {
+            console.log(data);
+            if (data) {
+                //table id goes here
+                $("#table").show();
+                $("#res1").text(data[0].name);
+                $("#res2").text(data[1].name);
+                $("#res3").text(data[2].name);
+                $("#res4").text(data[3].name);
+                $("#res5").text(data[4].name);
+
+                if (data.length > 5) {
+                    $("#table2").show();
+                    for (var i = 5; i < data.length; i++) {
+                        $("#table2").append("<li class='list-group-item'>" + data[i].name + "</li>")
+                    }
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>
