@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <link rel=“stylesheet” href=“https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css“> <script
-        src="https://code.jquery.com/jquery.js">
-        </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js">
+    </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -28,11 +28,6 @@
         <h2 class="text-center">Make your reservation</h2>
         <br>
         <div class="text-center">
-            <a href="/reserve">
-                <button type="button" class="btn btn-lg btn-primary glyphicon glyphicon-list-alt">
-
-                    Make a reservation
-                </button> </a>
             <a href="/">
                 <button type="button" class="btn btn-lg btn-default">
                     <span class="glyphicon glyphicon-home">
@@ -41,6 +36,12 @@
                     Home
                 </button>
             </a>
+            <a href="/reserve">
+                <button type="button" class="btn btn-lg btn-danger">
+                    <span class="glyphicon glyphicon-credit-card"></span>
+                    Make a reservation
+                </button> </a>
+
         </div>
 
         <div class="row">
@@ -67,8 +68,7 @@
 
             <div class="container">
                 <p>
-                    <a href="/api/newtables"> API Table Link</a>
-                    " | "
+                    <a href="/api/newtables"> API Table Link</a>|
                     <a href="/api/gettables">API Wait List</a>
                 </p>
             </div>
